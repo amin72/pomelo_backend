@@ -88,3 +88,6 @@ class Point(models.Model):
 
     def __str__(self):
         return f'({self.latitude}, {self.longitude})'
+
+    class Meta:
+        db_table = "map"
