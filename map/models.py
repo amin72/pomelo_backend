@@ -29,7 +29,7 @@ class Point(models.Model):
     ch4_plume  = models.CharField(max_length=255, null=True, blank=True)
     ch4_pressure  = models.CharField(max_length=255, null=True, blank=True)
     ch4_qc  = models.CharField(max_length=255, null=True, blank=True)
-    ch4_recordtime  = models.CharField(max_length=255, null=True, blank=True)
+    ch4_recordtime  = models.DateTimeField(null=True, blank=True)
     ch4_rssi  = models.CharField(max_length=255, null=True, blank=True)
     ch4_rssi_sd  = models.CharField(max_length=255, null=True, blank=True)
     ch4_temp  = models.CharField(max_length=255, null=True, blank=True)
@@ -43,8 +43,8 @@ class Point(models.Model):
     geo_sep  = models.CharField(max_length=255, null=True, blank=True)
     gps_alive  = models.CharField(max_length=255, null=True, blank=True)
     gps_fix  = models.CharField(max_length=255, null=True, blank=True)
-    gps_time_ori  = models.CharField(max_length=255, null=True, blank=True)
-    gps_time_pos  = models.CharField(max_length=255, null=True, blank=True)
+    gps_time_ori  = models.TimeField(null=True, blank=True)
+    gps_time_pos  = models.TimeField(null=True, blank=True)
     heading  = models.CharField(max_length=255, null=True, blank=True)
     heading_available  = models.CharField(max_length=255, null=True, blank=True)
     horizontal_dil  = models.CharField(max_length=255, null=True, blank=True)
@@ -60,7 +60,7 @@ class Point(models.Model):
     public_IP  = models.CharField(max_length=255, null=True, blank=True)
     ref_station_id  = models.CharField(max_length=255, null=True, blank=True)
     rm_young_86000_alive  = models.CharField(max_length=255, null=True, blank=True)
-    rmys_record_time  = models.CharField(max_length=255, null=True, blank=True)
+    rmys_record_time  = models.DateTimeField(null=True, blank=True)
     rmys_sonictemp  = models.CharField(max_length=255, null=True, blank=True)
     rmys_status  = models.CharField(max_length=255, null=True, blank=True)
     rmys_wdir_cf  = models.CharField(max_length=255, null=True, blank=True)
@@ -84,6 +84,7 @@ class Point(models.Model):
     wspd_cf_corrected = models.CharField(max_length=255, null=True, blank=True)
     x_utm = models.CharField(max_length=255, null=True, blank=True)
     y_utm = models.CharField(max_length=255, null=True, blank=True)
+    latest_gps_update = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return f'({self.latitude}, {self.longitude})'
