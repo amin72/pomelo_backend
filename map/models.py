@@ -34,7 +34,7 @@ class Point(models.Model):
     ch4_rssi_sd  = models.CharField(max_length=255, null=True, blank=True)
     ch4_temp  = models.CharField(max_length=255, null=True, blank=True)
     closest_fenced_site = models.CharField(max_length=255, null=True, blank=True)
-    computer_time  = models.CharField(max_length=255, null=True, blank=True)
+    computer_time  = models.DateTimeField(max_length=255, null=True, blank=True)
     dead_reckoning  = models.CharField(max_length=255, null=True, blank=True)
     dt_logger_alive  = models.CharField(max_length=255, null=True, blank=True)
     estimated_heading  = models.CharField(max_length=255, null=True, blank=True)
